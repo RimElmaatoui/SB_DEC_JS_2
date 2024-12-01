@@ -42,7 +42,7 @@ class CSVTextDataset(Dataset):
 @click.command()
 @click.option(
     "--dataset",
-    help="Nom du fichier CSV à utiliser (doit être dans le dataset Kaggle 'dataset1').",
+    help="Nom du fichier CSV à utiliser (doit être dans le dataset Kaggle 'dataset1/dataset1').",
     type=str,
     required=True,
 )
@@ -77,8 +77,8 @@ class CSVTextDataset(Dataset):
     default=10,
 )
 def main(dataset, cuda, batch_size, pretrain_epochs, finetune_epochs, hidden_dimension, clusters):
-    # Définir le dossier Kaggle 'dataset1' comme base pour les fichiers datasets
-    base_folder = "/kaggle/input/dataset1"
+    # Définir le dossier Kaggle 'dataset1/dataset1' comme base pour les fichiers datasets
+    base_folder = "/kaggle/input/dataset1/dataset1"
     dataset_path = os.path.join(base_folder, dataset)
 
     # Vérifier si le fichier dataset existe
